@@ -96,6 +96,11 @@ Array [
     "path": "/",
   },
   Object {
+    "file": "user/index.vue",
+    "name": "user-index-vue",
+    "path": "/user",
+  },
+  Object {
     "file": "about.vue",
     "name": "about-vue",
     "path": "/about",

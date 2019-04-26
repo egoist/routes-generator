@@ -1,7 +1,7 @@
 import { toRoutes } from '../src'
 
 test('simple', () => {
-  expect(toRoutes(['index.vue', 'about.vue'])).toMatchSnapshot()
+  expect(toRoutes(['index.vue', 'about.vue', 'user/index.vue'])).toMatchSnapshot()
 })
 
 test('directory', () => {

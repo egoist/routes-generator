@@ -36,7 +36,10 @@ function groupRoutes(
       ).map(sorted => sorted.route)
     }
   }
-  return new Set(sortRoutes([...routes]).map(sorted => sorted.route))
+  return new Set(sortRoutes([...routes]).map(({ route }) => ({
+    ...route,
+    path: route.path.replace(/\/index$/, '')
+  })))
 }
 
 export function toRoutes(
