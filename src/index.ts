@@ -43,7 +43,7 @@ export function toRoutes(
   files: Array<string> | Set<string>,
   { cwd = '' } = {}
 ): Route[] {
-  // Sort files in ASC so that we handle sorter path first
+  // Sort files in ASC so that we handle shorter path first
   files = [...files].sort()
   const routes: Set<Route> = new Set()
   for (const filePath of files) {
