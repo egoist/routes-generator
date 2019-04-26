@@ -12,7 +12,7 @@ yarn add @egoist/routes-generator
 
 ## Usage
 
-Generate routes array from files: 
+Generate routes array from files:
 
 ```js
 const { toRoutes } = require('@egoist/routes-generator')
@@ -50,7 +50,7 @@ const expectedRoutes = [
 
 assert.deepEqual(
   toRoutes(files, {
-    baseDir: '/my-app'
+    cwd: '/my-app'
   }),
   expectedRoutes
 )
