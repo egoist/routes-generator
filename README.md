@@ -12,7 +12,7 @@ yarn add @egoist/routes-generator
 
 ## Usage
 
-Get routes as an array:
+Generate routes array from files: 
 
 ```js
 const { toRoutes } = require('@egoist/routes-generator')
