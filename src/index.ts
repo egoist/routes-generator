@@ -49,11 +49,12 @@ export function toRoutes(
   // Sort files in ASC so that we handle shorter path first
   files = [...files].sort()
   const routes: Set<Route> = new Set()
-  for (const filePath of files) {
+  for (let filePath of files) {
+    filePath = slash(filePath)
     const routePath = filePathToRoutePath(filePath)
     routes.add({
       path: routePath,
-      file: path.join(cwd, filePath),
+      file: slash(path.join(cwd, filePath)),
       name: getRouteName(filePath)
     })
   }
@@ -73,4 +74,11 @@ function filePathToRoutePath(filePath: string) {
 
 function getRouteName(filePath: string) {
   return filePath.replace(/[^a-z0-9_-]/gi, '-')
+}
+
+/**
+ * Convert windows back slash to forward slash
+ */
+function slash(filepath: string) {
+  return filepath.replace(/\\/g, '/')
 }
