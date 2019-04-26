@@ -10,45 +10,31 @@ export interface Route {
 
 function groupRoutes(
   routes: Set<Route>,
-  allTrashRoutes: Set<Route>
+  rootRoutes: Set<Route> = routes
 ): Set<Route> {
-  const trashRoutes = new Set()
   for (const route of routes) {
-    if (route.path.endsWith('/index')) {
-      const parentRoutePath = route.path.replace(/\/index$/, '')
-      let parentRoute: Route | undefined
-      const childRoutes: Set<Route> = new Set()
-      for (const _route of routes) {
-        if (_route.path === parentRoutePath) {
-          parentRoute = _route
-        } else if (_route.path.startsWith(`${parentRoutePath}/`)) {
-          childRoutes.add(_route)
-        }
-      }
-      if (parentRoute) {
-        parentRoute.children = sortRoutes(
-          [...groupRoutes(childRoutes, allTrashRoutes)].map(childRoute => {
-            trashRoutes.add(childRoute)
-            allTrashRoutes.add(childRoute)
-            let childPath = childRoute.path
-            if (route.path === childPath) {
-              childPath = ''
-            } else {
-              childPath = childPath.slice(parentRoutePath.length + 1)
-            }
-            return {
-              ...childRoute,
-              path: childPath
-            }
-          })
-        ).map(sorted => sorted.route)
-      } else {
-        route.path = route.path.replace(/\/index$/, '')
+    const childRoutes: Set<Route> = new Set()
+    for (const _route of routes) {
+      if (_route.path.startsWith(`${route.path}/`)) {
+        routes.delete(_route)
+        rootRoutes.delete(_route)
+        childRoutes.add(_route)
       }
     }
-  }
-  for (const trash of trashRoutes) {
-    routes.delete(trash)
+    if (childRoutes.size > 0) {
+      route.children = sortRoutes(
+        [...groupRoutes(childRoutes, rootRoutes)].map(childRoute => {
+          let childPath = childRoute.path.slice(route.path.length + 1)
+          if (childPath === 'index') {
+            childPath = ''
+          }
+          return {
+            ...childRoute,
+            path: childPath
+          }
+        })
+      ).map(sorted => sorted.route)
+    }
   }
   return new Set(sortRoutes([...routes]).map(sorted => sorted.route))
 }
@@ -57,6 +43,8 @@ export function toRoutes(
   files: Array<string> | Set<string>,
   { cwd = '' } = {}
 ): Route[] {
+  // Sort files in ASC so that we handle sorter path first
+  files = [...files].sort()
   const routes: Set<Route> = new Set()
   for (const filePath of files) {
     const routePath = filePathToRoutePath(filePath)
@@ -66,11 +54,7 @@ export function toRoutes(
       name: getRouteName(filePath)
     })
   }
-  const allTrashRoutes = new Set()
-  const groupedRoutes = groupRoutes(routes, allTrashRoutes)
-  for (const trash of allTrashRoutes) {
-    groupedRoutes.delete(trash)
-  }
+  const groupedRoutes = groupRoutes(routes)
   return [...groupedRoutes]
 }
 

@@ -8,11 +8,6 @@ Array [
     "path": "/",
   },
   Object {
-    "component": "explore/tweets.vue",
-    "name": "explore-tweets-vue",
-    "path": "/explore/tweets",
-  },
-  Object {
     "children": Array [
       Object {
         "component": "post/[post]/index.vue",
@@ -52,6 +47,13 @@ Array [
     "path": "/about",
   },
   Object {
+    "children": Array [
+      Object {
+        "component": "explore/tweets.vue",
+        "name": "explore-tweets-vue",
+        "path": "tweets",
+      },
+    ],
     "component": "explore.vue",
     "name": "explore-vue",
     "path": "/explore",

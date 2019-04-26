@@ -58,7 +58,7 @@ assert.deepEqual(
 
 ### Nesting Routes
 
-when both `user.vue` and `user/index.vue`, the latter will be used as child route:
+When both a file and a directory with the same name as the file exist, the files in the directory will be used as child routes:
 
 In:
 
