@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`simple 1`] = `
+Array [
+  Object {
+    "component": "index.vue",
+    "name": "index-vue",
+    "path": "/",
+  },
+  Object {
+    "component": "explore/tweets.vue",
+    "name": "explore-tweets-vue",
+    "path": "/explore/tweets",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "component": "post/[post]/index.vue",
+        "name": "post--post--index-vue",
+        "path": "",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "component": "post/[post]/[comment]/index.vue",
+            "name": "post--post---comment--index-vue",
+            "path": "",
+          },
+          Object {
+            "component": "post/[post]/[comment]/likes.vue",
+            "name": "post--post---comment--likes-vue",
+            "path": "likes",
+          },
+          Object {
+            "component": "post/[post]/[comment]/replies.vue",
+            "name": "post--post---comment--replies-vue",
+            "path": "replies",
+          },
+        ],
+        "component": "post/[post]/[comment].vue",
+        "name": "post--post---comment--vue",
+        "path": ":comment",
+      },
+    ],
+    "component": "post/[post].vue",
+    "name": "post--post--vue",
+    "path": "/post/:post",
+  },
+  Object {
+    "component": "about.vue",
+    "name": "about-vue",
+    "path": "/about",
+  },
+  Object {
+    "component": "explore.vue",
+    "name": "explore-vue",
+    "path": "/explore",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "component": "[user]/index.vue",
+        "name": "-user--index-vue",
+        "path": "",
+      },
+      Object {
+        "component": "[user]/profile.vue",
+        "name": "-user--profile-vue",
+        "path": "profile",
+      },
+    ],
+    "component": "[user].vue",
+    "name": "-user--vue",
+    "path": "/:user",
+  },
+]
+`;

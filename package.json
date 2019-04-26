@@ -1,0 +1,64 @@
+{
+  "name": "@egoist/routes-generator",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Generate routes from filesystem, use case: Next/Nuxt-style routing",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "url": "egoist/routes-generator",
+    "type": "git"
+  },
+  "author": "egoist<0x142857@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.13.7",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-config-rem": "^4.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "husky": "^1.0.0-rc.13",
+    "jest": "^24.7.1",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.15.2",
+    "rollup": "^1.10.1",
+    "rollup-plugin-typescript2": "^0.21.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.5",
+    "xo": "^0.23.0"
+  },
+  "xo": {
+    "extends": [
+      "rem",
+      "plugin:prettier/recommended"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "xo --fix",
+      "git add"
+    ],
+    "*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": ">=6"
+  }
+}
