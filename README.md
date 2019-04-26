@@ -26,22 +26,22 @@ const files = [
 const expectedRoutes = [
   {
     path: '/',
-    component: '/my-app/index.vue',
+    file: '/my-app/index.vue',
     name: 'index-vue'
   },
   {
     path: '/:user',
-    component: '/my-app/[user].vue',
+    file: '/my-app/[user].vue',
     name: '-user--vue',
     children: [
       {
         path: '',
-        component: '/my-app/[user]/index.vue',
+        file: '/my-app/[user]/index.vue',
         name: '-user--index-vue'
       },
       {
         path: 'profile',
-        component: '/my-app/[user]/profile.vue',
+        file: '/my-app/[user]/profile.vue',
         name: '-user--profile-vue'
       }
     ]
@@ -73,15 +73,15 @@ Out:
 ```js
 {
   path: '/user',
-  component: 'user.vue',
+  file: 'user.vue',
   children: [
     {
       path: '',
-      component: 'user/index.vue'
+      file: 'user/index.vue'
     },
     {
       path: 'profile',
-      component: 'user/profile.vue'
+      file: 'user/profile.vue'
     }
   ]
 }

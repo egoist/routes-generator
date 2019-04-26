@@ -5,63 +5,63 @@ Array [
   Object {
     "children": Array [
       Object {
-        "component": "post/[post]/index.vue",
+        "file": "post/[post]/index.vue",
         "name": "post--post--index-vue",
         "path": "",
       },
       Object {
         "children": Array [
           Object {
-            "component": "post/[post]/[comment]/index.vue",
+            "file": "post/[post]/[comment]/index.vue",
             "name": "post--post---comment--index-vue",
             "path": "",
           },
           Object {
-            "component": "post/[post]/[comment]/likes.vue",
+            "file": "post/[post]/[comment]/likes.vue",
             "name": "post--post---comment--likes-vue",
             "path": "likes",
           },
           Object {
-            "component": "post/[post]/[comment]/replies.vue",
+            "file": "post/[post]/[comment]/replies.vue",
             "name": "post--post---comment--replies-vue",
             "path": "replies",
           },
         ],
-        "component": "post/[post]/[comment].vue",
+        "file": "post/[post]/[comment].vue",
         "name": "post--post---comment--vue",
         "path": ":comment",
       },
     ],
-    "component": "post/[post].vue",
+    "file": "post/[post].vue",
     "name": "post--post--vue",
     "path": "/post/:post",
   },
   Object {
     "children": Array [
       Object {
-        "component": "explore/tweets.vue",
+        "file": "explore/tweets.vue",
         "name": "explore-tweets-vue",
         "path": "tweets",
       },
     ],
-    "component": "explore.vue",
+    "file": "explore.vue",
     "name": "explore-vue",
     "path": "/explore",
   },
   Object {
     "children": Array [
       Object {
-        "component": "[user]/index.vue",
+        "file": "[user]/index.vue",
         "name": "-user--index-vue",
         "path": "",
       },
       Object {
-        "component": "[user]/profile.vue",
+        "file": "[user]/profile.vue",
         "name": "-user--profile-vue",
         "path": "profile",
       },
     ],
-    "component": "[user].vue",
+    "file": "[user].vue",
     "name": "-user--vue",
     "path": "/:user",
   },
@@ -71,17 +71,17 @@ Array [
 exports[`directory 1`] = `
 Array [
   Object {
-    "component": "index.vue",
+    "file": "index.vue",
     "name": "index-vue",
     "path": "/",
   },
   Object {
-    "component": "foo/bar.vue",
+    "file": "foo/bar.vue",
     "name": "foo-bar-vue",
     "path": "/foo/bar",
   },
   Object {
-    "component": "foo/baz.vue",
+    "file": "foo/baz.vue",
     "name": "foo-baz-vue",
     "path": "/foo/baz",
   },
@@ -91,12 +91,12 @@ Array [
 exports[`simple 1`] = `
 Array [
   Object {
-    "component": "index.vue",
+    "file": "index.vue",
     "name": "index-vue",
     "path": "/",
   },
   Object {
-    "component": "about.vue",
+    "file": "about.vue",
     "name": "about-vue",
     "path": "/about",
   },

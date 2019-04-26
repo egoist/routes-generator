@@ -3,7 +3,7 @@ import sortRoutes from './sort-routes'
 
 export interface Route {
   path: string
-  component: string
+  file: string
   name: string
   children?: Route[]
 }
@@ -50,7 +50,7 @@ export function toRoutes(
     const routePath = filePathToRoutePath(filePath)
     routes.add({
       path: routePath,
-      component: path.join(cwd, filePath),
+      file: path.join(cwd, filePath),
       name: getRouteName(filePath)
     })
   }
