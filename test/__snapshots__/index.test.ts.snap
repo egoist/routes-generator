@@ -1,12 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`simple 1`] = `
+exports[`complex example 1`] = `
 Array [
-  Object {
-    "component": "index.vue",
-    "name": "index-vue",
-    "path": "/",
-  },
   Object {
     "children": Array [
       Object {
@@ -42,11 +37,6 @@ Array [
     "path": "/post/:post",
   },
   Object {
-    "component": "about.vue",
-    "name": "about-vue",
-    "path": "/about",
-  },
-  Object {
     "children": Array [
       Object {
         "component": "explore/tweets.vue",
@@ -74,6 +64,41 @@ Array [
     "component": "[user].vue",
     "name": "-user--vue",
     "path": "/:user",
+  },
+]
+`;
+
+exports[`directory 1`] = `
+Array [
+  Object {
+    "component": "index.vue",
+    "name": "index-vue",
+    "path": "/",
+  },
+  Object {
+    "component": "foo/bar.vue",
+    "name": "foo-bar-vue",
+    "path": "/foo/bar",
+  },
+  Object {
+    "component": "foo/baz.vue",
+    "name": "foo-baz-vue",
+    "path": "/foo/baz",
+  },
+]
+`;
+
+exports[`simple 1`] = `
+Array [
+  Object {
+    "component": "index.vue",
+    "name": "index-vue",
+    "path": "/",
+  },
+  Object {
+    "component": "about.vue",
+    "name": "about-vue",
+    "path": "/about",
   },
 ]
 `;
