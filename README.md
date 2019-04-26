@@ -12,7 +12,7 @@ yarn add @egoist/routes-generator
 
 ## Usage
 
-Generate routes array from files:
+The kitchen sink example, generate routes array from files:
 
 ```js
 const { toRoutes } = require('@egoist/routes-generator')
@@ -56,7 +56,38 @@ assert.deepEqual(
 )
 ```
 
-Use with `fast-glob` and `chokidar`:
+### Nesting Routes
+
+when both `user.vue` and `user/index.vue`, the latter will be used as child route:
+
+In:
+
+```
+user.vue
+user/index.vue
+user/profile.vue
+```
+
+Out:
+
+```js
+{
+  path: '/user',
+  component: 'user.vue',
+  children: [
+    {
+      path: '',
+      component: 'user/index.vue'
+    },
+    {
+      path: 'profile',
+      component: 'user/profile.vue'
+    }
+  ]
+}
+```
+
+### Use with `fast-glob` and `chokidar`:
 
 ```bash
 yarn add fast-glob chokidar
