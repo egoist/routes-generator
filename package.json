@@ -12,7 +12,8 @@
   ],
   "scripts": {
     "test": "jest",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "prepublishOnly": "yarn build"
   },
   "repository": {
     "url": "egoist/routes-generator",
