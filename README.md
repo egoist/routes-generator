@@ -12,21 +12,18 @@ yarn add @egoist/routes-generator
 
 ## Usage
 
-```js
-const { RoutesGenerator } = require('@egoist/routes-generator')
-
-const generator = new RoutesGenerator(
-  ['[user].vue', '[user]/index.vue', '[user]/profile.vue', 'index.vue'],
-  {
-    baseDir: '/my-app'
-  }
-)
-```
-
 Get routes as an array:
 
 ```js
-const routes = [
+const { toRoutes } = require('@egoist/routes-generator')
+
+const files = [
+  '[user].vue',
+  '[user]/index.vue',
+  '[user]/profile.vue',
+  'index.vue'
+]
+const expectedRoutes = [
   {
     path: '/',
     component: '/my-app/index.vue',
@@ -51,7 +48,12 @@ const routes = [
   }
 ]
 
-assert.deepEqual(generator.getRoutes(), routes)
+assert.deepEqual(
+  toRoutes(files, {
+    baseDir: '/my-app'
+  }),
+  expectedRoutes
+)
 ```
 
 Use with `fast-glob` and `chokidar`:
