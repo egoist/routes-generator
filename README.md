@@ -99,7 +99,7 @@ const glob = require('fast-glob')
 const chokidar = require('chokidar')
 
 const patterns = ['**/*.vue']
-const cwd = './src/routs'
+const cwd = './src/routes'
 
 const files = new Set(glob.sync(patterns, { cwd }))
 let routes = toRoutes(files, { cwd })
